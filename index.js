@@ -24,7 +24,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect('mongodb://root:1mFX!B4FEO6H@ds255754.mlab.com:55754/yelpcamp');
 
 //Passport configuration
 app.use(require("express-session")({
