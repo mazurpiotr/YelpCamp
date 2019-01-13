@@ -50,6 +50,10 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen("80", "0.0.0.0", function () {
+//Error: listen EACCES: permission denied 0.0.0.0:80
+var server = require('http').createServer();
+var port = process.env.PORT || 3000;
+
+app.listen(port, server, function () {
   console.log("The YelpCam Server has started!");
 });
