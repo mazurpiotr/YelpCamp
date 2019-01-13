@@ -26,7 +26,10 @@ app.use(flash());
 
 //mongoose.connect("mongodb://localhost/yelp_camp");
 //mongoose.connect('mongodb://root:1mFX!B4FEO6H@ds255754.mlab.com:55754/yelpcamp');
-mongoose.connect(process.env.DATABASEURL);
+
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+
+mongoose.connect(url);
 
 //Passport configuration
 app.use(require("express-session")({
