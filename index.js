@@ -25,7 +25,8 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 //mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect('mongodb://root:1mFX!B4FEO6H@ds255754.mlab.com:55754/yelpcamp');
+//mongoose.connect('mongodb://root:1mFX!B4FEO6H@ds255754.mlab.com:55754/yelpcamp');
+mongoose.connect(process.env.DATABASEURL);
 
 //Passport configuration
 app.use(require("express-session")({
@@ -55,5 +56,5 @@ var server = require('http').createServer();
 var port = process.env.PORT || 3000;
 
 app.listen(port, server, function () {
-  console.log("The YelpCam Server has started!");
+  console.log("The YelpCam Server has started on: " + server.address() + ":" + port);
 });
