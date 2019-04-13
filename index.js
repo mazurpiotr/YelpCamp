@@ -27,6 +27,8 @@ app.use(flash());
 //mongoose.connect("mongodb://localhost/yelp_camp");
 //mongoose.connect('mongodb://root:1mFX!B4FEO6H@ds255754.mlab.com:55754/yelpcamp');
 
+process.env.DATABASEURL = 'mongodb://root:1mFX!B4FEO6H@ds255754.mlab.com:55754/yelpcamp';
+
 var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
 
 mongoose.connect(url);
